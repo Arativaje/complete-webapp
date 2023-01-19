@@ -1,0 +1,22 @@
+<div class="register">
+    <form [formGroup]="registerForm" (ngSubmit)="register()" enctype="multipart/form-data"> 
+        <h3>Register Here</h3><br>
+        <input type="text" formControlName="name">
+        <span  *ngIf=" registerForm.controls.name.touched && registerForm.controls.name.errors?.required">
+            Please enter name</span><br>
+        <input type="text" formControlName="email">
+        <span *ngIf = "registerForm.controls.email.touched && registerForm.controls.email.errors?.required">
+            Please enter email</span><br>
+        <input type="password" formControlName="pwd">
+        <span *ngIf = "registerForm.controls.pwd.touched && registerForm.controls.pwd.errors?.required">
+            Please enter password</span><br>
+        
+        <!-- Upload Photo
+        <img [src]="myImage" *ngIf="myImage" height="150px" width="150px">
+        <input type="file" formControlName="file" (change)="changePhoto($event)"><br> -->
+
+        <button type="submit">Register</button>
+        <br>
+        <p>{{msg}}</p>
+    </form>
+</div>

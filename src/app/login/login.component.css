@@ -1,0 +1,14 @@
+.login{
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.login .mycontrol  {
+    margin-bottom: 10px;
+}
+
+.redcolor-text p{
+    color: red;
+    font-size: 11px;
+}

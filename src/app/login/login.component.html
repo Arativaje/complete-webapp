@@ -1,0 +1,25 @@
+<div class="login">
+    <form [formGroup]="loginForm">
+        <h3>Login Here</h3><br>
+        <div class="mycontrol">
+            <input formControlName="username">
+            <div class="redcolor-text">
+                <p *ngIf="loginForm.controls.username.touched && 
+                loginForm.controls.username.errors?.required">
+                    Username is required
+                </p>
+              
+            </div>
+        </div>
+
+        <div class="mycontrol">
+            <input type="password" formControlName="password">
+            <div class="redcolor-text">
+                <p *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].errors?.required">
+                    Password is required!
+                </p>
+            </div>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+</div>
