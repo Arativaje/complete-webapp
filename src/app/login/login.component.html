@@ -1,5 +1,5 @@
 <div class="login">
-    <form [formGroup]="loginForm">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
         <h3>Login Here</h3><br>
         <div class="mycontrol">
             <input formControlName="username">
@@ -20,6 +20,7 @@
                 </p>
             </div>
         </div>
+        <div>{{msg}}</div>
         <button type="submit">Login</button>
     </form>
 </div>

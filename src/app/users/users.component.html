@@ -1,0 +1,29 @@
+<div>
+<div class="box">
+        <div class="title">User List</div>
+        <div class="action-button"><button (click)="addNewUser()">Add New User</button>
+    </div>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Sr.No</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th colspan="2">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userList; let i = index;">
+            <td>{{i}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td> 
+                <button (click)="editUser(user._id)">Edit User</button>
+                <button (click)="deleteUser()">Delete User</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+</div>

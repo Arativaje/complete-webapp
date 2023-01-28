@@ -1,0 +1,24 @@
+<div class="register">
+    <form [formGroup]="registerForm" (ngSubmit)="register()" enctype="multipart/form-data"> 
+        <h3>Add New User</h3><br>
+        <input type="text" formControlName="name" placeholder="name">
+        <span  *ngIf=" registerForm.controls.name.touched && registerForm.controls.name.errors?.required">
+            Please enter name</span><br>
+        <input type="text" formControlName="email" placeholder="email">
+        <span *ngIf = "registerForm.controls.email.touched && registerForm.controls.email.errors?.required">
+            Please enter email</span><br>
+        <input type="password" formControlName="pwd" placeholder="password">
+        <span *ngIf = "registerForm.controls.pwd.touched && registerForm.controls.pwd.errors?.required">
+            Please enter password</span><br>
+            <select formControlName="userType" placeholder="Select User Type">
+                <option value="CUSTOMER">Customer</option>
+                <option value="ADMIN">Admin</option>
+            </select>
+            <span *ngIf = "registerForm.controls.userType.touched && registerForm.controls.userType.errors?.required">
+                Please select user type</span><br>
+     
+        <button type="submit">Save</button>
+        <br>
+        <p>{{msg}}</p>
+    </form>
+</div>

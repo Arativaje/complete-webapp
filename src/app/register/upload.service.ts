@@ -17,4 +17,20 @@ export class UploadService {
   registerUser(body:any){        
     return this.http.post("backend/register",body,);
   }
+
+  loginUser(body:any){
+    return this.http.post("backend/login",body);
+  }
+
+  getUsers(){
+    return this.http.get("backend/users");
+  }
+
+  getUserById(id:any){
+      return this.http.get("backend/user/"+id)
+  }
+
+  updateUser(id:any,body:any){
+    return this.http.put("backend/user/"+id,body);
+  }
 }
